@@ -57,3 +57,32 @@ const game = {
     team2: 6.5,
   },
 };
+//1
+const [players1, players2] = game.players;
+console.log(players1, players2);
+//2
+const [gk, ...fieldPlayers] = players1;
+console.log(gk, fieldPlayers);
+
+const [gk2, ...fieldPlayers2] = players2;
+console.log(gk2, fieldPlayers2);
+//3
+const allPlayers = [...players1, ...players2];
+console.log(allPlayers);
+//4
+const players1Final = [...players1, "Thiago", "Coutinho", "Perisic"];
+console.log(players1Final);
+//5
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+console.log(team1, draw, team2);
+//6
+const printGoals = function (...players) {
+  console.log(players);
+  console.log(`${players.length} goal scored`);
+};
+printGoals(...game.scored);
+//7
+team1 < team2 && console.log(`team 1 is likely to win `);
+team1 > team2 && console.log(`team 2 is likely to win `);
